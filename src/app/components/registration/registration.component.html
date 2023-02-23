@@ -1,0 +1,43 @@
+<div class="mainBox">
+    <div class="loginContainer">
+        <form class="formbox" [formGroup]="registrationForm" (ngSubmit)="onSubmit()"> 
+            <div class="logintxt">Registration Page</div>                  
+            <div class="txtbox">
+                <label class="txtboxlbl" >FullName</label> 
+                <mat-form-field appearance="outline" class="txtfield" >
+                    <input matInput placeholder="" formControlName="fullName"/>
+                    <mat-error>Enter FullName</mat-error>
+                </mat-form-field>
+            </div>                
+            <div class="txtbox1">
+                <label class="txtboxlbl">Email</label>
+                <mat-form-field appearance="outline" class="txtfield">
+                    <input matInput placeholder="" formControlName="email"/>
+                    <mat-error>Email Required</mat-error>
+                </mat-form-field>
+            </div>   
+            <div class="txtbox1">
+                <label class="txtboxlbl">Password</label>
+                <mat-form-field appearance="outline" class="txtfield">
+                    <input matInput placeholder="" formControlName="password"/>
+                    <mat-error>Password required</mat-error>
+                </mat-form-field>
+            </div>   
+            <div class="txtbox1">
+                <label class="txtboxlbl">MobileNumber</label>
+                <mat-form-field appearance="outline" class="txtfield">
+                    <input matInput placeholder="" formControlName="mobileNumber"/>
+                    <mat-error>Mobile Number Required</mat-error>
+                </mat-form-field>
+            </div> 
+            <div class="twobtns">
+                <div class="loginBtn">
+                    <button mat-raised-button routerLink="/login" class="login">Login Instead</button>
+                </div> 
+                <div class="signupBtn">
+                    <button mat-raised-button type="submit" class="signup">Sign Up</button>
+                </div> 
+            </div>            
+        </form> 
+    </div>
+</div>
