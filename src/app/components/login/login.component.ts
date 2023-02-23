@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userservice/user.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm!:FormGroup;
   submitted=false;
 
-  constructor(private formbuilder:FormBuilder,private userservice:UserService){}
+  constructor(private formbuilder:FormBuilder,private userservice:UserService,private router:Router){}
   ngOnInit(): void {
     this.loginForm=this.formbuilder.group({
       email:['',[Validators.required,Validators.email]],
@@ -29,9 +30,9 @@ export class LoginComponent implements OnInit {
     }
     this.userservice.adminLogin(payload).subscribe((response:any)=>{
       console.log("Logged In Successful",response);
-      localStorage.setItem('token',response.data)
-      
+      localStorage.setItem('token',response.data)      
     })
+    this.router.navigate(['getallemployee'])
    }
   }
 

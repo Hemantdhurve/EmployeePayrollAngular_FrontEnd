@@ -1,0 +1,62 @@
+<div class="header">
+    <div class="subHeader">
+        <div class="logo">
+            <img src="/assets/addemplogo.png">
+        </div>
+        <div class="txtEmp">
+            <span class="empgreen">EMPLOYEE</span>
+            <span class="paygrey">PAYROLL</span>
+        </div>
+    </div>
+</div>
+<div class="mainContainer">
+    <div class="addcontainer">
+        <div class="detailsSearch">
+            Employee Details
+        </div>
+        <div class="searchbar">
+           <input class="inpfield" placeholder="Search...">
+        </div>
+        <div class="searchAdd">           
+            <div class="icon">
+                <img src="/assets/searchicon.svg" class="iconserch">
+            </div>
+            <div class="buttonAdd">
+                <button mat-button class="colorbtn">
+                    <span class="plus"> + </span>
+                    <span> Add User</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="tablecontainer">
+        <table style="text-align: center;">
+            <tr>
+                <th class="nametxt">Name</th>
+                <th>Gender</th>
+                <th class="depp">Department</th>
+                <th>Salary</th>
+                <th>Start date</th>
+                <th>Actions</th>
+            </tr>
+            <tr *ngFor="let emp of empArray">
+                <td class="namePofile"><img src='/assets/man1.png' class="profileimg"> {{emp.employeeName}}</td>
+                <td>{{emp.gender}}</td>
+                <td class="clubdept">
+                    <span class="multidept"> {{emp.department}} </span>
+                </td>
+                <td class="salarylogo">
+                    <img src="/assets/rupee.png" class="rupee">
+                    {{emp.salary}}
+                </td>
+                <td>{{emp.startDate}}</td>
+                <td>
+                    <div class="twoIcons">
+                        <img src="/assets/trash.png" class="point" >
+                        <img src="/assets/edit.png" class="point" >
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

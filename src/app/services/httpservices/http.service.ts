@@ -14,4 +14,8 @@ export class HttpService {
   PostService(url: string, reqdata: Ilogin | Iregistration, token: boolean = false, httpOptions: any) {
     return this.httpclient.post(this.baseurl + url, reqdata, token && httpOptions)
   }
+
+  GetService(url: string, token: boolean = false, httpOptions: any) {
+    return this.httpclient.get(this.baseurl + url, token && httpOptions)
+  }
 }
