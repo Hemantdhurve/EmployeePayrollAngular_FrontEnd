@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Ilogin, Iregistration } from 'src/app/typeInterface/typeInterface';
+import { IdeleteEmployee, Ilogin, Iregistration } from 'src/app/typeInterface/typeInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +17,9 @@ export class HttpService {
 
   GetService(url: string, token: boolean = false, httpOptions: any) {
     return this.httpclient.get(this.baseurl + url, token && httpOptions)
+  }
+
+  DeleteService(url: string, token: boolean = false, httpOptions: any) {
+    return this.httpclient.delete(this.baseurl + url, token && httpOptions)
   }
 }

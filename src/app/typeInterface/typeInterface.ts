@@ -8,3 +8,7 @@ export type Iregistration={
     password: string,
     mobileNumber:Number
 }
+
+export type IdeleteEmployee={
+    employeeId:Number
+}

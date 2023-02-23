@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employeeservices/employee.service';
+import { IdeleteEmployee } from 'src/app/typeInterface/typeInterface';
 
 @Component({
   selector: 'app-getallemployees',
@@ -19,6 +20,13 @@ export class GetallemployeesComponent implements OnInit {
     this.employeeservice.getAllEmployees().subscribe((response:any)=>{
       console.log("Getting All Employee List",response)
       this.empArray=response.data;
+    })
+  }
+
+  deleteEmployee(idData:IdeleteEmployee){
+    this.employeeservice.deleteEmployee(idData).subscribe((response:any)=>{
+      console.log("Employee Deleted Successfully",response);
+      this.getAllEmployee();      
     })
   }
 
