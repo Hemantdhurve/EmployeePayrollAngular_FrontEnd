@@ -1,0 +1,108 @@
+<div class="header">
+    <div class="subHeader">
+        <div class="logo">
+            <img src="/assets/addemplogo.png">
+        </div>
+        <div class="txtEmp">
+            <span class="empgreen">EMPLOYEE</span>
+            <span class="paygrey">PAYROLL</span>
+        </div>
+    </div>
+</div>
+<div class="colorAll">
+    <div class="container">
+        <form class="formBox" [formGroup]="empForm" >
+            <div class="formDataBox">
+                <div class="formTxt">Employee Payroll Form</div>
+                <div class="name">
+                    <label class="txtname">Name:</label>
+                    <div class="txtbox">
+                        <mat-form-field appearance="outline" class="txtfield">
+                            <input matInput placeholder="" formControlName="employeeName"/>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="name">
+                    <label class="txtname">Profile Image :</label>
+                    <div class="radiocontent">
+                        <label class="radioprof">
+                            <input type="radio" id="Profile1" name="profileImage" formControlName="profileImage"
+                                value="/assets/meee.png">
+                            <img class="profile" id="Profile1" src="/assets/meee.png">
+                        </label>
+                        <label class="radioprof">
+                            <input type="radio" id="Profile2" name="profileImage" formControlName="profileImage"
+                                value="/assets/women1.png">
+                            <img class="profile" id="Profile2" src="/assets/women1.png">
+                        </label>
+                        <label class="radioprof">
+                            <input type="radio" id="Profile3" name="profileImage" formControlName="profileImage"
+                                value="/assets/man1.png">
+                            <img class="profile" id="Profile3" src="/assets/man1.png">
+                        </label>
+                        <label class="radioprof">
+                            <input type="radio" id="Profile4" name="profileImage" formControlName="profileImage"
+                                value="/assets/women2.png">
+                            <img class="profile" id="Profile4" src="/assets/women2.png">
+                        </label>
+                    </div>
+                </div>
+                <div class="name">
+                    <label class="txtname" for="gender">Gender :</label>
+                    <div class="radiocontent">
+                        <label class="radioprof">
+                            <input type="radio" id="male" name="gender" value="Male" formControlName="gender">
+                            <label for="male">Male</label>
+                        </label>
+                        <label class="radioprof">
+                            <input type="radio" id="female" name="gender" value="FeMale" formControlName="gender">
+                            <label for="female">Female</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="name">
+                    <label class="txtname" for="department">Department:</label>
+                    <div class="chkbox"  *ngFor="let dept of deptArray;let i=index">
+                        <input type="checkbox" formArrayName="department" [name]="dept.deptname" [value]="dept.deptname" [checked]="dept.checked" (change)="onChange($event)">
+                        <label>{{dept.deptname}}</label>
+                    </div>
+                </div>
+                <div class="name">
+                    <label class="txtname" for="salary">Salary :</label>
+                    <mat-form-field appearance="outline">
+                        <mat-select placeholder="Select Salary" formControlName="salary">
+                            <mat-option value="10000">10000</mat-option>
+                            <mat-option value="20000">20000</mat-option>
+                            <mat-option value="30000">30000</mat-option>
+                            <mat-option value="40000">40000</mat-option>
+                            <mat-option value="50000">50000</mat-option>
+                            <mat-option value="60000">60000</mat-option>
+                            <mat-option value="70000">70000</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="name">
+                    <label class="txtname" for="date">Start Date :</label>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="startDate" [matDatepicker]="picker">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="txtareabox">
+                    <label class="txtname" for="inputnotes">Notes:</label>
+                    <textarea type="text" placeholder="Type your message here..." formControlName="notes"></textarea>
+                </div>
+                <div class="rowbutton">
+                    <div>
+                        <button mat-flat-button class="btn">Cancle</button>
+                    </div>
+                    <div>
+                        <button mat-flat-button class="btn" type="submit" (click)="onSubmit()">Submit</button>
+                        <button mat-flat-button class="btn1" type="reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

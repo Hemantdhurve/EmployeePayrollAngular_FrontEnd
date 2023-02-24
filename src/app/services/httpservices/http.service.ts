@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IdeleteEmployee, Ilogin, Iregistration } from 'src/app/typeInterface/typeInterface';
+import { IaddEmployee, IdeleteEmployee, Ilogin, Iregistration } from 'src/app/typeInterface/typeInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class HttpService {
 
   constructor(private httpclient: HttpClient) { }
 
-  PostService(url: string, reqdata: Ilogin | Iregistration, token: boolean = false, httpOptions: any) {
+  PostService(url: string, reqdata: Ilogin | Iregistration | IaddEmployee, token: boolean = false, httpOptions: any) {
     return this.httpclient.post(this.baseurl + url, reqdata, token && httpOptions)
   }
 

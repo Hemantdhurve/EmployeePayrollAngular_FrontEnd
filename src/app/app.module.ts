@@ -12,13 +12,18 @@ import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GetallemployeesComponent } from './components/getallemployees/getallemployees.component';
+import { EmployeeformComponent } from './components/employeeform/employeeform.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    GetallemployeesComponent
+    GetallemployeesComponent,
+    EmployeeformComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,10 @@ import { GetallemployeesComponent } from './components/getallemployees/getallemp
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

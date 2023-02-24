@@ -12,3 +12,13 @@ export type Iregistration={
 export type IdeleteEmployee={
     employeeId:Number
 }
+export type IaddEmployee={
+    employeeName: string,
+    profileImage: string,
+    gender:string,
+    department: string,
+    salary: Number,
+    startDate: string,
+    notes: string,
+
+}
