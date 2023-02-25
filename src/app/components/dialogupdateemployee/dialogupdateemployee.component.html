@@ -1,13 +1,13 @@
 <h2 mat-dialog-title>Update Employee Details</h2>
 <mat-dialog-content class="mat-typography">
     <div class="container">
-  <form>
+  <form [formGroup]="dialogForm">
     <div class="formDataBox">
         <div class="name">
             <label class="txtname">Name:</label>
             <div class="txtbox">
                 <mat-form-field appearance="outline" class="txtfield">
-                    <input matInput placeholder=""/>
+                    <input matInput placeholder="" formControlName="employeeName"/>
                 </mat-form-field>
             </div>
         </div>
@@ -15,22 +15,22 @@
             <label class="txtname">Profile Image :</label>
             <div class="radiocontent">
                 <label class="radioprof">
-                    <input type="radio" id="Profile1" name="profileImage"
+                    <input type="radio" id="Profile1" name="profileImg" formControlName="profileImg" 
                         value="/assets/meee.png">
                     <img class="profile" id="Profile1" src="/assets/meee.png">
                 </label>
                 <label class="radioprof">
-                    <input type="radio" id="Profile2" name="profileImage"
+                    <input type="radio" id="Profile2" name="profileImg" formControlName="profileImg"
                         value="/assets/women1.png">
                     <img class="profile" id="Profile2" src="/assets/women1.png">
                 </label>
                 <label class="radioprof">
-                    <input type="radio" id="Profile3" name="profileImage"
+                    <input type="radio" id="Profile3" name="profileImg" formControlName="profileImg"
                         value="/assets/man1.png">
                     <img class="profile" id="Profile3" src="/assets/man1.png">
                 </label>
                 <label class="radioprof">
-                    <input type="radio" id="Profile4" name="profileImage"
+                    <input type="radio" id="Profile4" name="profileImg" formControlName="profileImg"
                         value="/assets/women2.png">
                     <img class="profile" id="Profile4" src="/assets/women2.png">
                 </label>
@@ -40,11 +40,11 @@
             <label class="txtname" for="gender">Gender :</label>
             <div class="radiocontent">
                 <label class="radioprof">
-                    <input type="radio" id="male" name="gender" value="Male">
+                    <input type="radio" id="male" name="gender" value="Male" formControlName="gender">
                     <label for="male">Male</label>
                 </label>
                 <label class="radioprof">
-                    <input type="radio" id="female" name="gender" value="FeMale">
+                    <input type="radio" id="female" name="gender" value="FeMale" formControlName="gender">
                     <label for="female">Female</label>
                 </label>
             </div>
@@ -52,43 +52,64 @@
         <div class="name">
             <label class="txtname" for="department">Department:</label>
             <div class="chkbox">
-                <input class="nameofdept" id="HR" type="checkbox" name="department" value="HR">
+                <input class="nameofdept" id="HR" type="radio" name="department" value="HR" formControlName="department">
                 <label for="HR">HR</label>
             </div>
             <div class="chkbox">
-                <input class="nameofdept" id="Sales" type="checkbox" name="department" value="Sales">
+                <input class="nameofdept" id="Sales" type="radio" name="department" value="Sales" formControlName="department">
                 <label for="Sales">Sales</label>
             </div>
             <div class="chkbox">
-                <input class="nameofdept" id="Finance" type="checkbox" name="department" value="Finance">
+                <input class="nameofdept" id="Finance" type="radio" name="department" value="Finance" formControlName="department">
                 <label for="Finance">Finance</label>
             </div>
             <div class="chkbox">
-                <input class="nameofdept" id="Engineer" type="checkbox" name="department" value="Engineer">
+                <input class="nameofdept" id="Engineer" type="radio" name="department" value="Engineer" formControlName="department">
                 <label for="Engineer">Engineer</label>
             </div>
             <div class="chkbox">
-                <input class="nameofdept" id="Other" type="checkbox" name="department" value="Other">
+                <input class="nameofdept" id="Other" type="radio" name="department" value="Other" formControlName="department">
                 <label for="Other">Other</label>
             </div>
         </div>
+
         <div class="name">
             <label class="txtname" for="salary">Salary :</label>
             <mat-form-field appearance="outline">
                 <mat-select placeholder="Select Salary">
-                    <mat-option value="10000">10000</mat-option>
+                    <mat-option>
+                        <input id="10000" type="radio" name="salary" value="10000" formControlName="salary">
+                        <label for="10000">10000</label>
+                    </mat-option>
+                    <mat-option>
+                        <input id="20000" type="radio" name="salary" value="20000" formControlName="salary">
+                        <label for="20000">20000</label>
+                    </mat-option>
+                    <mat-option>
+                        <input id="30000" type="radio" name="salary" value="30000" formControlName="salary">
+                        <label for="30000">30000</label>
+                    </mat-option>
+                    <mat-option>
+                        <input id="40000" type="radio" name="salary" value="40000" formControlName="salary">
+                        <label for="40000">40000</label>
+                    </mat-option>
+                    <mat-option>
+                        <input id="50000" type="radio" name="salary" value="50000" formControlName="salary">
+                        <label for="50000">50000</label>
+                    </mat-option>
+                    <!-- <mat-option value="10000">10000</mat-option>
                     <mat-option value="20000">20000</mat-option>
                     <mat-option value="30000">30000</mat-option>
                     <mat-option value="40000">40000</mat-option>
                     <mat-option value="50000">50000</mat-option>
-                    <mat-option value="60000">60000</mat-option>
+                    <mat-option value="60000">60000</mat-option> -->
                 </mat-select>
             </mat-form-field>
         </div>
         <div class="name">
             <label class="txtname" for="date">Start Date :</label>
             <mat-form-field appearance="outline">
-                <input matInput [matDatepicker]="picker">
+                <input matInput [matDatepicker]="picker" formControlName="startDate">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -96,13 +117,13 @@
         </div>
         <div class="txtareabox">
             <label class="txtname" for="inputnotes">Notes:</label>
-            <textarea type="text" placeholder="Type your message here..."></textarea>
+            <textarea type="text" placeholder="Type your message here..." formControlName="notes"></textarea>
         </div>
     </div>
 
     <mat-dialog-actions class="btnx">
       <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button [mat-dialog-close]="true" type="submit" cdkFocusInitial class="updateBtn">Update</button>
+      <button mat-button [mat-dialog-close]="true" type="submit" cdkFocusInitial class="updateBtn" (click)="updateEmployee()">Update</button>
     </mat-dialog-actions>
 </form>
 </div>

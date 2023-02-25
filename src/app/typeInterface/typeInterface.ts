@@ -22,3 +22,13 @@ export type IaddEmployee={
     notes: string,
 
 }
+export type IupdateEmp={
+    employeeId:Number,
+    employeeName: string,
+    profileImg: string,
+    gender:string,
+    department: string,
+    salary: Number,
+    startDate: string,
+    notes: string,
+}

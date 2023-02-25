@@ -11,10 +11,10 @@ import { DialogupdateemployeeComponent } from '../dialogupdateemployee/dialogupd
 })
 export class GetallemployeesComponent implements OnInit {
 
-  empArray:any;
+  empArray:any=[];
 
   constructor(private employeeservice:EmployeeService,public dialog: MatDialog){}
-  
+
   ngOnInit(): void {
     this.getAllEmployee();
   }
@@ -41,5 +41,4 @@ export class GetallemployeesComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
-
 }

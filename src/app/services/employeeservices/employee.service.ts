@@ -1,6 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IaddEmployee, IdeleteEmployee } from 'src/app/typeInterface/typeInterface';
+import { IaddEmployee, IdeleteEmployee, IupdateEmp } from 'src/app/typeInterface/typeInterface';
 import { HttpService } from '../httpservices/http.service';
 
 @Injectable({
@@ -41,6 +41,16 @@ export class EmployeeService {
       })
     }
     return this.httpservice.PostService('/Emoloyee/AddEmployee',reqdata,true,headersOptions);
+  }
+
+  updateEmployee(employeeId:Number,reqdata:IupdateEmp){
+    let headersOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpservice.PutService('/Emoloyee/UpdateEmp?employeeId='+employeeId,reqdata,true,headersOptions);
   }
 
 }
