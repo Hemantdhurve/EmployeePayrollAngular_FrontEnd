@@ -1,0 +1,151 @@
+.container{
+    width: 50vw;
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+::ng-deep mat-dialog-content{
+    scroll-behavior: smooth;
+}
+::ng-deep .mat-mdc-dialog-content {
+    max-height: 84vh !important;
+}
+.formDataBox{
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    row-gap: 12px;
+}
+.formTxt{
+    font-size: 28px;
+    font-weight: 600;
+    color: #42515F;
+    height: 40px;
+}
+.name{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+.txtname{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 10vw; 
+}
+.txtbox{
+    display: flex;
+    width: 35vw;
+    height: 40px;   
+} 
+
+.txtfield{
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    width: 100%;
+}
+::ng-deep .mat-mdc-text-field-wrapper {
+    height: 40px !important;  
+
+}
+
+::ng-deep .mat-mdc-form-field-infix {
+    min-height: 50px;
+
+}
+::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    padding-top: 10px;
+    padding-bottom: 16px;
+}
+::ng-deep .mat-mdc-form-field-error-wrapper {
+    position: absolute;
+    top: -5px !important;
+    left: 0 !important;
+    right: 2px !important;
+    padding: 0 !important;
+}
+.radiocontent{
+    display: flex;
+    align-items: center; 
+    width: 35vw;
+}
+.radioprof{
+    display: flex;
+    margin-left: 5px;
+    height: 40px;
+    align-items: center;
+    width: 8vw;
+    margin-left: -6px;
+}
+.profile{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width: 35px;
+    border-radius: 50%;
+    margin-left: 12px;
+}
+.chkbox{
+    display: flex;
+    height: 30px;
+    align-items: center;
+    font-size: 17px;
+    margin-right: 8px;
+    position: relative;
+// right: 4px;
+}
+.nameofdept{
+border: 1px solid black;
+}
+.deptTxt{
+    position: relative;
+    right: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.selectoption{
+    width: 18vw;
+    height: 40px;
+    font-size: 18px;
+    color: #42515F;
+}
+//
+button.example-custom-date-class {
+    background: orange;
+    border-radius: 100%;
+  }
+.date{
+    display: flex;
+    width: 9vw;
+    height: 40px;
+    font-size: 18px;
+    margin-right: 10px;
+    color: #42515F;
+}
+.txtareabox{
+    height: 100px;
+    display: flex;
+    // align-items: center;
+    font-size: 16px;
+}
+textarea{
+    border: 1px solid #BDBDBD;
+    width: 35vw;
+    height: 80px;
+    resize: none;
+
+}
+.btnx{
+    display: flex;
+    justify-content: space-between;
+    width: 45vw;
+    position: relative;;
+    bottom: 10px;
+}
+.updateBtn{
+    background-color:  #82A70C;
+    color: azure;
+}

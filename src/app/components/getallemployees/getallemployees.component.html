@@ -22,7 +22,7 @@
                 <img src="/assets/searchicon.svg" class="iconserch">
             </div>
             <div class="buttonAdd">
-                <button mat-button class="colorbtn">
+                <button mat-button class="colorbtn" routerLink="/empform">
                     <span class="plus"> + </span>
                     <span> Add User</span>
                 </button>
@@ -40,7 +40,7 @@
                 <th>Actions</th>
             </tr>
             <tr *ngFor="let emp of empArray">
-                <td class="namePofile"><img src='/assets/man1.png' class="profileimg"> {{emp.employeeName}}</td>
+                <td class="namePofile"><img [src]="emp.profileImg" class="profileimg"> {{emp.employeeName}}</td>
                 <td>{{emp.gender}}</td>
                 <td class="clubdept">
                     <span class="multidept"> {{emp.department}} </span>
@@ -53,7 +53,7 @@
                 <td>
                     <div class="twoIcons">
                         <img src="/assets/trash.png" class="point" (click)="deleteEmployee(emp.employeeId)">
-                        <img src="/assets/edit.png" class="point" >
+                        <img src="/assets/edit.png" class="point" (click)="openDialog(emp)">
                     </div>
                 </td>
             </tr>

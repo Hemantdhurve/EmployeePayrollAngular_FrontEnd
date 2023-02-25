@@ -16,6 +16,8 @@ import { EmployeeformComponent } from './components/employeeform/employeeform.co
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { DialogupdateemployeeComponent } from './components/dialogupdateemployee/dialogupdateemployee.component';
+import {MatDialogModule} from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     LoginComponent,
     RegistrationComponent,
     GetallemployeesComponent,
-    EmployeeformComponent
+    EmployeeformComponent,
+    DialogupdateemployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     HttpClientModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { EmployeeService } from 'src/app/services/employeeservices/employee.service';
 import { IdeleteEmployee } from 'src/app/typeInterface/typeInterface';
+import { DialogupdateemployeeComponent } from '../dialogupdateemployee/dialogupdateemployee.component';
 
 @Component({
   selector: 'app-getallemployees',
@@ -11,7 +13,8 @@ export class GetallemployeesComponent implements OnInit {
 
   empArray:any;
 
-  constructor(private employeeservice:EmployeeService){}
+  constructor(private employeeservice:EmployeeService,public dialog: MatDialog){}
+  
   ngOnInit(): void {
     this.getAllEmployee();
   }
@@ -28,6 +31,15 @@ export class GetallemployeesComponent implements OnInit {
       console.log("Employee Deleted Successfully",response);
       this.getAllEmployee();      
     })
+  }
+  openDialog(empObj:object) {
+    const dialogRef = this.dialog.open(DialogupdateemployeeComponent,{
+      data:empObj
+    })
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }

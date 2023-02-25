@@ -1,5 +1,5 @@
 <div class="header">
-    <div class="subHeader">
+    <div class="subHeader" routerLink="/getallemployee">
         <div class="logo">
             <img src="/assets/addemplogo.png">
         </div>
@@ -26,22 +26,22 @@
                     <label class="txtname">Profile Image :</label>
                     <div class="radiocontent">
                         <label class="radioprof">
-                            <input type="radio" id="Profile1" name="profileImage" formControlName="profileImage"
+                            <input type="radio" id="Profile1" name="profileImg" formControlName="profileImg"
                                 value="/assets/meee.png">
                             <img class="profile" id="Profile1" src="/assets/meee.png">
                         </label>
                         <label class="radioprof">
-                            <input type="radio" id="Profile2" name="profileImage" formControlName="profileImage"
+                            <input type="radio" id="Profile2" name="profileImg" formControlName="profileImg"
                                 value="/assets/women1.png">
                             <img class="profile" id="Profile2" src="/assets/women1.png">
                         </label>
                         <label class="radioprof">
-                            <input type="radio" id="Profile3" name="profileImage" formControlName="profileImage"
+                            <input type="radio" id="Profile3" name="profileImg" formControlName="profileImg"
                                 value="/assets/man1.png">
                             <img class="profile" id="Profile3" src="/assets/man1.png">
                         </label>
                         <label class="radioprof">
-                            <input type="radio" id="Profile4" name="profileImage" formControlName="profileImage"
+                            <input type="radio" id="Profile4" name="profileImg" formControlName="profileImg"
                                 value="/assets/women2.png">
                             <img class="profile" id="Profile4" src="/assets/women2.png">
                         </label>
@@ -60,24 +60,67 @@
                         </label>
                     </div>
                 </div>
-                <div class="name">
+                <!-- <div class="name">
                     <label class="txtname" for="department">Department:</label>
                     <div class="chkbox"  *ngFor="let dept of deptArray;let i=index">
                         <input type="checkbox" formArrayName="department" [name]="dept.deptname" [value]="dept.deptname" [checked]="dept.checked" (change)="onChange($event)">
                         <label>{{dept.deptname}}</label>
                     </div>
+                </div> -->
+                <div class="name">
+                    <label class="txtname" for="department">Department:</label>
+                    <div class="chkbox">
+                        <input id="HR" type="radio" name="department" value="HR" formControlName="department">
+                        <label for="HR">HR</label>
+                    </div>
+                    <div class="chkbox">
+                        <input id="Sales" type="radio" name="department" value="Sales" formControlName="department">
+                        <label for="Sales">Sales</label>
+                    </div>
+                    <div class="chkbox">
+                        <input id="Finance" type="radio" name="department" value="Finance" formControlName="department">
+                        <label for="Finance">Finance</label>
+                    </div>
+                    <div class="chkbox">
+                        <input id="Engineer" type="radio" name="department" value="Engineer" formControlName="department">
+                        <label for="Engineer">Engineer</label>
+                    </div>
+                    <div class="chkbox">
+                        <input id="Other" type="radio" name="department" value="Other" formControlName="department">
+                        <label for="Other">Other</label>
+                    </div>
                 </div>
                 <div class="name">
                     <label class="txtname" for="salary">Salary :</label>
                     <mat-form-field appearance="outline">
-                        <mat-select placeholder="Select Salary" formControlName="salary">
-                            <mat-option value="10000">10000</mat-option>
-                            <mat-option value="20000">20000</mat-option>
-                            <mat-option value="30000">30000</mat-option>
-                            <mat-option value="40000">40000</mat-option>
-                            <mat-option value="50000">50000</mat-option>
-                            <mat-option value="60000">60000</mat-option>
-                            <mat-option value="70000">70000</mat-option>
+                        <mat-select placeholder="Select Salary" >
+                            <mat-option>
+                            <input id="10000" type="radio" name="salary" value="10000" formControlName="salary">
+                            <label for="10000">10000</label>
+                        </mat-option>
+                        <mat-option>
+                            <input id="20000" type="radio" name="salary" value="20000" formControlName="salary">
+                            <label for="20000">20000</label>
+                        </mat-option>
+                        <mat-option>
+                            <input id="30000" type="radio" name="salary" value="30000" formControlName="salary">
+                            <label for="30000">30000</label>
+                        </mat-option>
+                        <mat-option>
+                            <input id="40000" type="radio" name="salary" value="40000" formControlName="salary">
+                            <label for="40000">40000</label>
+                        </mat-option>
+                        <mat-option>
+                            <input id="50000" type="radio" name="salary" value="50000" formControlName="salary">
+                            <label for="50000">50000</label>
+                        </mat-option>
+                            <!-- <mat-option value="20000" id="10000" formControlName="salary">20000</mat-option>
+                            <mat-option value="10000" id="20000" formControlName="salary">10000</mat-option>
+                            <mat-option value="30000" id="30000" formControlName="salary">30000</mat-option>
+                            <mat-option value="40000" id="40000" formControlName="salary">40000</mat-option>
+                            <mat-option value="50000" id="50000" formControlName="salary">50000</mat-option>
+                            <mat-option value="60000" id="60000" formControlName="salary">60000</mat-option>
+                            <mat-option value="70000" id="70000" formControlName="salary">70000</mat-option> -->
                         </mat-select>
                     </mat-form-field>
                 </div>

@@ -15,15 +15,17 @@ export class EmployeeformComponent implements OnInit{
   checked:boolean=true; 
   deptname:string='';
   id:Number=0;
+  selected:any;
 
   constructor(private formbuilder:FormBuilder,private empservice:EmployeeService,){}
 
   ngOnInit(): void {
     this.empForm=this.formbuilder.group({
       employeeName:['',[Validators.required,Validators.minLength(8)]],
-      profileImage:['',[Validators.required]],
+      profileImg:['',[Validators.required]],
       gender:['',[Validators.required]],
-      department: this.formbuilder.array([],[Validators.required]),
+      department:['', Validators.required],
+      // department: this.formbuilder.array([],[Validators.required]),
       salary:['',[Validators.required]],
       startDate:['',[Validators.required]],
       notes:['',[Validators.required]],
@@ -37,10 +39,10 @@ export class EmployeeformComponent implements OnInit{
     // if(this.empForm.valid){
       let payload={
         employeeName:this.empForm.value.employeeName,
-        profileImage:this.empForm.value.profileImage,
+        profileImg:this.empForm.value.profileImg,
         gender:this.empForm.value.gender,
         department:this.empForm.value.department,
-        salary:this.empForm.value.salary,
+        salary:Number(this.empForm.value.salary),
         startDate:this.empForm.value.startDate,
         notes:this.empForm.value.notes,
       }
@@ -53,11 +55,11 @@ export class EmployeeformComponent implements OnInit{
 
   getDeptList(){
     this.deptArray=[
-      {id:1,deptname:'HR',checked:false},
-      {id:2,deptname:'Sales',checked:false},
-      {id:3,deptname:'Finance',checked:false},
-      {id:4,deptname:'Engineer',checked:false},
-      {id:5,deptname:'Other',checked:false},
+      {id:1,deptname:'HR',checked:false,value:'HR'},
+      {id:2,deptname:'Sales',checked:false,value:'Sales'},
+      {id:3,deptname:'Finance',checked:false,value:'Finance'},
+      {id:4,deptname:'Engineer',checked:false,value:'Engineer'},
+      {id:5,deptname:'Other',checked:false,value:'Other'},
     ]
 }
   onChange($event:any){

@@ -14,7 +14,7 @@ export type IdeleteEmployee={
 }
 export type IaddEmployee={
     employeeName: string,
-    profileImage: string,
+    profileImg: string,
     gender:string,
     department: string,
     salary: Number,
