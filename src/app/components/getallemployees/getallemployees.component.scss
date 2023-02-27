@@ -70,7 +70,7 @@
     display: flex;
     position: relative;
     align-items: center;
-    left: 10.5vw;
+    left: 10vw;
     height: 50px;
     justify-content: flex-end;
 }
@@ -82,9 +82,10 @@
     outline: none;
     border: none;
     padding-left: 10px;
+    padding-top: 2px;
     box-shadow: 0px 1px 5px gray;
     background-color: #FFFFFF;
-    border-radius: 15px 0px 0px 15px;
+    border-radius: 15px;
 
 }
 
@@ -183,7 +184,7 @@ tr {
 }
 
 .depp {
-    width: 350px;
+    width: 250px;
 }
 
 .namePofile {

@@ -15,11 +15,11 @@
             Employee Details
         </div>
         <div class="searchbar">
-           <input class="inpfield" placeholder="Search...">
+           <input class="inpfield" placeholder="Search..." (keyup)="searchName($event)" *ngIf="!searchToggle">
         </div>
         <div class="searchAdd">           
             <div class="icon">
-                <img src="/assets/searchicon.svg" class="iconserch">
+                <img src="/assets/searchicon.svg" class="iconserch" (click)="searchField()">
             </div>
             <div class="buttonAdd">
                 <button mat-button class="colorbtn" routerLink="/empform">
@@ -39,7 +39,7 @@
                 <th>Start date</th>
                 <th>Actions</th>
             </tr>
-            <tr *ngFor="let emp of empArray">
+            <tr *ngFor="let emp of empArray | searchpipe:searchname">
                 <td class="namePofile"><img [src]="emp.profileImg" class="profileimg"> {{emp.employeeName}}</td>
                 <td>{{emp.gender}}</td>
                 <td class="clubdept">

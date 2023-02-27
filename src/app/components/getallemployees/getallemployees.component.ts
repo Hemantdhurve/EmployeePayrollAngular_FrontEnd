@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { DataService } from 'src/app/services/dataservice/data.service';
 import { EmployeeService } from 'src/app/services/employeeservices/employee.service';
 import { IdeleteEmployee } from 'src/app/typeInterface/typeInterface';
 import { DialogupdateemployeeComponent } from '../dialogupdateemployee/dialogupdateemployee.component';
@@ -11,24 +13,38 @@ import { DialogupdateemployeeComponent } from '../dialogupdateemployee/dialogupd
 })
 export class GetallemployeesComponent implements OnInit {
 
-  empArray:any=[];
+  empArray:Object=[];
+  subscription:any;
+  message:any;
+  searchname:string='';
+  searchToggle:boolean=true;
 
-  constructor(private employeeservice:EmployeeService,public dialog: MatDialog){}
+  constructor(private employeeservice:EmployeeService,public dialog: MatDialog,private dataservice:DataService,private snackbar:MatSnackBar){}
 
   ngOnInit(): void {
     this.getAllEmployee();
+
+    this.subscription=this.dataservice.currentMessage.subscribe(message=>{
+      this.message=message;
+    //now storing the data in the variable
+    this.searchname=message.dataResult[0];
+    console.log(this.searchname);
+    })
   }
 
   getAllEmployee(){
     this.employeeservice.getAllEmployees().subscribe((response:any)=>{
       console.log("Getting All Employee List",response)
       this.empArray=response.data;
+
     })
   }
 
   deleteEmployee(idData:IdeleteEmployee){
     this.employeeservice.deleteEmployee(idData).subscribe((response:any)=>{
       console.log("Employee Deleted Successfully",response);
+      this.snackbar.open("Employee Deleted From List ", "Close",{duration:2000});
+
       this.getAllEmployee();      
     })
   }
@@ -40,5 +56,22 @@ export class GetallemployeesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  searchName(event: any) {
+    let searchResult = {
+      type: 'search',
+      dataResult: [event.target.value]
+    }
+    return this.dataservice.changeMessage(searchResult)
+  }
+
+  searchField(){
+    if(this.searchToggle===true){
+      this.searchToggle=!this.searchToggle
+    }
+    else{
+      this.searchToggle=!this.searchToggle
+    }
   }
 }

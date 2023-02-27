@@ -17,7 +17,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DialogupdateemployeeComponent } from './components/dialogupdateemployee/dialogupdateemployee.component';
-import {MatDialogModule} from '@angular/material/dialog'
+import {MatDialogModule} from '@angular/material/dialog';
+import { SearchpipePipe } from './services/pipe/searchpipe.pipe';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import {MatDialogModule} from '@angular/material/dialog'
     RegistrationComponent,
     GetallemployeesComponent,
     EmployeeformComponent,
-    DialogupdateemployeeComponent
+    DialogupdateemployeeComponent,
+    SearchpipePipe
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import {MatDialogModule} from '@angular/material/dialog'
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

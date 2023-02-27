@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { EmployeeService } from 'src/app/services/employeeservices/employee.service';
 
 @Component({
@@ -23,7 +24,7 @@ export class DialogupdateemployeeComponent  implements OnInit{
 
 
   constructor(private dialogRef:MatDialogRef<DialogupdateemployeeComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
-  private formbuilder:FormBuilder,private empservice:EmployeeService){
+  private formbuilder:FormBuilder,private empservice:EmployeeService,private snackbar:MatSnackBar){
     console.log('dialod data printed', data);
 
     this.employeeId=data?.employeeId,
@@ -70,6 +71,7 @@ export class DialogupdateemployeeComponent  implements OnInit{
     }
     this.empservice.updateEmployee(this.employeeId,payload).subscribe((response:any)=>{
       console.log("Employee Details Updated ",response);
+      this.snackbar.open("Employee Details Updated", "Close",{duration:2000});
     })
   }
 

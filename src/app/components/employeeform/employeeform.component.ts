@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { EmployeeService } from 'src/app/services/employeeservices/employee.service';
 
 @Component({
@@ -17,7 +19,7 @@ export class EmployeeformComponent implements OnInit{
   id:Number=0;
   selected:any;
 
-  constructor(private formbuilder:FormBuilder,private empservice:EmployeeService,){}
+  constructor(private formbuilder:FormBuilder,private empservice:EmployeeService,private router:Router,private snackbar:MatSnackBar){}
 
   ngOnInit(): void {
     this.empForm=this.formbuilder.group({
@@ -25,18 +27,15 @@ export class EmployeeformComponent implements OnInit{
       profileImg:['',[Validators.required]],
       gender:['',[Validators.required]],
       department:['', Validators.required],
-      // department: this.formbuilder.array([],[Validators.required]),
       salary:['',[Validators.required]],
       startDate:['',[Validators.required]],
       notes:['',[Validators.required]],
     })    
-    this.getDeptList();
   }
   get f(){return this.empForm.controls}
 
   onSubmit(){
     this.submitted=true;
-    // if(this.empForm.valid){
       let payload={
         employeeName:this.empForm.value.employeeName,
         profileImg:this.empForm.value.profileImg,
@@ -47,37 +46,11 @@ export class EmployeeformComponent implements OnInit{
         notes:this.empForm.value.notes,
       }
       this.empservice.addEmployee(payload).subscribe((response:any)=>{
-        console.log('Employee Added Successfully',response);
-                
-      })  
-    
+        console.log('Employee Added Successfully',response);                
+        this.router.navigate(['/getallemployee'])
+      this.snackbar.open("Employee Added ", "Close",{duration:2000});
+
+      })   
   }
-
-  getDeptList(){
-    this.deptArray=[
-      {id:1,deptname:'HR',checked:false,value:'HR'},
-      {id:2,deptname:'Sales',checked:false,value:'Sales'},
-      {id:3,deptname:'Finance',checked:false,value:'Finance'},
-      {id:4,deptname:'Engineer',checked:false,value:'Engineer'},
-      {id:5,deptname:'Other',checked:false,value:'Other'},
-    ]
-}
-  onChange($event:any){
-   const id=$event.target.value;
-   const isChecked=$event.target.checked;
-   const deptname=$event.target.name;
-   console.log('Id='+id,'checked value='+ isChecked,'deptName='+ deptname)
-
-   const department: FormArray = this.empForm.get('department') as FormArray;
-
-    if (isChecked) {
-      department.push(new FormControl(id));
-    } else {
-      const index = department.controls.findIndex(x => x.value === id);
-      department.removeAt(index);
-    }
-  }
-
-
-  
+ 
 }
