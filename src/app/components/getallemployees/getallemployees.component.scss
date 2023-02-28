@@ -42,7 +42,8 @@
 //
 .mainContainer {
     background-color: #E2E2E2;
-    height: auto;
+    min-height: 88vh;
+    max-height: auto;
     width: 100vw;
 }
 

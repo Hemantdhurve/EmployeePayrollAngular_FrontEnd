@@ -1,5 +1,5 @@
 <h2 mat-dialog-title>Update Employee Details</h2>
-<mat-dialog-content class="mat-typography">
+<mat-dialog-content class="mat-typography" @fade>
     <div class="container">
   <form [formGroup]="dialogForm">
     <div class="formDataBox">
@@ -97,12 +97,6 @@
                         <input id="50000" type="radio" name="salary" value="50000" formControlName="salary">
                         <label for="50000">50000</label>
                     </mat-option>
-                    <!-- <mat-option value="10000">10000</mat-option>
-                    <mat-option value="20000">20000</mat-option>
-                    <mat-option value="30000">30000</mat-option>
-                    <mat-option value="40000">40000</mat-option>
-                    <mat-option value="50000">50000</mat-option>
-                    <mat-option value="60000">60000</mat-option> -->
                 </mat-select>
             </mat-form-field>
         </div>

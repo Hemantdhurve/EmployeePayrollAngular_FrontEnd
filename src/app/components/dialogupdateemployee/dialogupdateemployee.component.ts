@@ -2,12 +2,16 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { fade } from 'src/app/animations/animation';
 import { EmployeeService } from 'src/app/services/employeeservices/employee.service';
 
 @Component({
   selector: 'app-dialogupdateemployee',
   templateUrl: './dialogupdateemployee.component.html',
-  styleUrls: ['./dialogupdateemployee.component.scss']
+  styleUrls: ['./dialogupdateemployee.component.scss'],
+  animations:[
+    fade
+  ]
 })
 export class DialogupdateemployeeComponent  implements OnInit{
 

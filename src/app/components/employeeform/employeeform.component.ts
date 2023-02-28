@@ -7,7 +7,7 @@ import { EmployeeService } from 'src/app/services/employeeservices/employee.serv
 @Component({
   selector: 'app-employeeform',
   templateUrl: './employeeform.component.html',
-  styleUrls: ['./employeeform.component.scss']
+  styleUrls: ['./employeeform.component.scss'],
 })
 export class EmployeeformComponent implements OnInit{
 
