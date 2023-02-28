@@ -53,7 +53,7 @@
                 <td>{{emp.startDate | date:'dd-MMM-yyyy'}}</td>
                 <td>
                     <div class="twoIcons">
-                        <img @fade src="/assets/trash.png" class="point" (click)="deleteEmployee(emp.employeeId)">
+                        <img @slider src="/assets/trash.png" class="point" (click)="deleteEmployee(emp.employeeId)">
                         <img src="/assets/edit.png" class="point" (click)="openDialog(emp)">
                     </div>
                 </td>

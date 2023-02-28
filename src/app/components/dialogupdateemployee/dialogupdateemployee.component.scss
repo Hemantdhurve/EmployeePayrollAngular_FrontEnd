@@ -149,3 +149,137 @@ textarea{
     background-color:  #82A70C;
     color: azure;
 }
+
+@media (min-width:721px) and (max-width:1280px) {
+    .container{
+        width: 72vw;
+    }
+    ::ng-deep .mat-mdc-dialog-content {
+        max-height: 84vh !important;
+    }
+    .formDataBox{
+        width: 70vw;
+        left: 5vw;
+    }
+    .name{
+        font-size: 16px;
+    }
+    .txtname{
+        width: 16vw; 
+    }
+    .txtbox{
+        width: 55vw;   
+    } 
+    .radiocontent{
+        width: 45vw;
+    }
+    .radioprof{
+        width: 15vw;
+    }
+    .profile{
+        width: 35px;
+    }
+    .chkbox{
+        font-size: 15px;
+        margin-right: 5px;
+    }
+    .txtareabox{
+        height: 100px;
+    }
+    textarea{
+        width: 55vw;
+    
+    }
+    .btnx{
+        width: 70vw;
+    }
+}
+@media (min-width:481px) and (max-width:720px) {
+    .container{
+        width: 72vw;
+    }
+    ::ng-deep .mat-mdc-dialog-content {
+        max-height: 84vh !important;
+    }
+    .formDataBox{
+        width: 70vw;
+        left: 0vw;
+    }
+    .name{
+        font-size: 16px;
+    }
+    .txtname{
+        width: 16vw; 
+    }
+    .txtbox{
+        width: 55vw;   
+    } 
+    .radiocontent{
+        width: 45vw;
+    }
+    .radioprof{
+        width: 15vw;
+    }
+    .profile{
+        width: 35px;
+    }
+    .chkbox{
+        font-size: 15px;
+        margin-right: 2px;
+    }
+    .txtareabox{
+        height: 100px;
+    }
+    textarea{
+        width: 55vw;
+    
+    }
+    .btnx{
+        width: 70vw;
+    }
+}
+@media (min-width:320px) and (max-width:480px) {
+    .container{
+        width: 72vw;
+    }
+    ::ng-deep .mat-mdc-dialog-content {
+        max-height: 84vh !important;
+    }
+    .formDataBox{
+        width: 70vw;
+        left: 0vw;
+    }
+    .name{
+        font-size: 16px;
+    }
+    .txtname{
+        width: 20vw; 
+    }
+    .txtbox{
+        width: 55vw;   
+    } 
+    .radiocontent{
+        flex-wrap: wrap;
+        width: 50vw;
+    }
+    .radioprof{
+        width: 22vw;
+    }
+    .profile{
+        width: 35px;
+    }
+    .chkbox{
+        font-size: 15px;
+        margin-right: 2px;
+    }
+    .txtareabox{
+        height: 100px;
+    }
+    textarea{
+        width: 55vw;
+    
+    }
+    .btnx{
+        width: 70vw;
+    }
+}

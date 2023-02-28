@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { fade } from 'src/app/animations/animation';
+import { fade, slider } from 'src/app/animations/animation';
 import { DataService } from 'src/app/services/dataservice/data.service';
 import { EmployeeService } from 'src/app/services/employeeservices/employee.service';
 import { IdeleteEmployee } from 'src/app/typeInterface/typeInterface';
@@ -23,7 +23,8 @@ import { DialogupdateemployeeComponent } from '../dialogupdateemployee/dialogupd
     //     animate(2000,style({opacity:0}))
     //   ])
     // ])
-    fade
+    fade,
+    slider
   ]
 })
 export class GetallemployeesComponent implements OnInit {

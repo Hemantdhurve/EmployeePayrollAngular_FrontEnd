@@ -209,3 +209,124 @@ textarea{
     background-color: #00000029 !important;
     color: #42515F !important;
 }
+
+
+//Media Query
+@media (min-width: 721px) and (max-width: 1280px) {
+    .formBox{
+        width: 80vw;
+    }
+    .formDataBox{
+        width: 65vw;
+    }
+    .name{
+        height: 50px;
+        font-size: 16px;
+    }
+    .txtname{
+        width: 15vw; 
+    }
+    .txtbox{
+        width: 50vw;  
+    
+    } 
+    .radiocontent{
+        width: 50vw;
+    }
+    .radioprof{
+        width: 10vw;
+    }
+    .chkbox{
+        margin-right: 5px;
+    }
+    textarea{
+        width: 50vw;    
+    }
+    .btn{
+        width: 120px;
+    }
+}
+@media (min-width: 481px) and (max-width: 720px) {
+    .formBox{
+        width: 100vw;
+        height: 100%;
+        box-shadow: none;
+    }
+    .formDataBox{
+        width: 90vw;
+    }
+    .name{
+        height: 50px;
+        font-size: 15px;
+    }
+    .txtname{
+        width: 25vw; 
+    }
+    .txtbox{
+        width: 65vw;  
+    
+    } 
+    .radiocontent{  
+        width: 50vw;
+    }
+    .radioprof{
+        width: 25vw;
+    }
+    .chkbox{
+        margin-right: 4px;
+        font-size: 13px;
+    }
+    textarea{
+        width: 64vw;    
+    }
+    .btn{
+        width: 80px;
+    }
+    .btn1{
+        width: 80px;
+    }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+    .header{
+        display: none;
+    }
+    .formBox{
+        width: 100vw;
+        height: 100%;
+        box-shadow: none;
+    }
+    .formDataBox{
+        width: 90vw;
+    }
+    .name{
+        height: 50px;
+        font-size: 15px;    
+    }
+    .txtname{
+        width: 25vw; 
+    }
+    .txtbox{
+        width: 65vw;  
+    
+    } 
+    .radiocontent{  
+        width: 50vw;
+    }
+    .radioprof{
+        width: 25vw;
+    }
+    .chkbox{
+        margin-right: 4px;
+        font-size: 13px;
+    }
+    textarea{
+        width: 64vw;    
+    }
+    .btn{
+        width: 60px;
+    }
+    
+.btn1{
+    width: 60px;
+}
+}

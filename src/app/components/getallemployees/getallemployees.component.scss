@@ -235,3 +235,251 @@ tr {
 .point {
     cursor: pointer;
 }
+
+@media (min-width:721px) and (max-width:1280px) {
+    .subHeader {
+        left: 5vw;
+    }
+
+    .addcontainer {
+        width: 90vw;
+        left: 5vw;
+    }
+
+    .searchbar {
+        width: 25vw;
+    }
+
+    .inpfield {
+        width: 25vw;
+
+    }
+
+    .searchAdd {
+        width: 20vw;
+        gap: 5px;
+    }
+
+    .icon {
+        width: 40px;
+    }
+
+    .buttonAdd {
+        width: 120px;
+
+    }
+
+    .colorbtn {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .plus {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .tablecontainer {
+        width: 90vw;
+        left: 5vw;
+    }
+
+    table {
+        text-align: start;
+    }
+
+    td {
+        padding-left: 1px;
+        height: 8vh;
+        font-size: 15px;
+    }
+
+    th {
+        height: 7vh;
+        font-size: 14px;
+    }
+
+    .clubdept {
+        text-align: start;
+        padding-left: 50px;
+
+    }
+
+    .depp {
+        width: 200px;
+    }
+}
+
+@media (min-width:481px) and (max-width:720px) {
+    .subHeader {
+        left: 5vw;
+    }
+
+    .addcontainer {
+        width: 100vw;
+        left: 0vw;
+    }
+
+    .searchbar {
+        width: 25vw;
+    }
+
+    .inpfield {
+        width: 25vw;
+
+    }
+
+    .searchAdd {
+        width: 20vw;
+        gap: 5px;
+    }
+
+    .icon {
+        width: 40px;
+    }
+
+    .buttonAdd {
+        width: 120px;
+
+    }
+
+    .colorbtn {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .plus {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .tablecontainer {
+        width: 100vw;
+        left: 0vw;
+    }
+
+    td {
+        padding-left: 1px;
+        height: 8vh;
+        font-size: 15px;
+    }
+
+    th {
+        height: 7vh;
+        font-size: 14px;
+    }
+
+    .nametxt {
+        padding-left: 30px;
+    }
+
+    .clubdept {
+        text-align: start;
+        padding-left: 10px;
+
+    }
+
+    .depp {
+        width: 100px;
+    }
+
+    .twoIcons {
+        height: 20px;
+        gap: 5px;
+    }
+}
+
+@media (min-width:320px) and (max-width:480px) {
+    .header {
+        display: none;
+    }
+
+    .subHeader {
+        left: 5vw;
+    }
+
+    .addcontainer {
+        width: 100vw;
+        left: 0vw;
+    }
+
+    .detailsSearch {
+        font-size: 18px;
+    }
+
+    .searchbar {
+        width: 25vw;
+    }
+
+    .inpfield {
+        width: 25vw;
+    }
+
+    .searchAdd {
+        width: 35vw;
+        gap: 5px;
+    }
+
+    .icon {
+        width: 40px;
+    }
+
+    .buttonAdd {
+        width: 120px;
+        height: 30px;
+
+    }
+
+    .colorbtn {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .plus {
+        font-size: 16px;
+        height: 20px;
+    }
+
+    .tablecontainer {
+        width: 100vw;
+        left: 0vw;
+
+    }
+
+    td {
+        padding-left: 1px;
+        height: 8vh;
+        font-size: 12px;
+    }
+
+    th {
+        height: 7vh;
+        font-size: 10px;
+    }
+
+    .nametxt {
+        padding-left: 20px;
+    }
+
+    .clubdept {
+        text-align: start;
+        padding-left: 10px;
+
+    }
+    .profileimg {
+        width: 20px;
+        padding-left: 1px;
+        margin-right: 1px;
+    }
+
+    .depp {
+        width: 100px;
+    }
+
+    .twoIcons {
+        height: 15px;
+        gap: 5px;
+    }
+}
